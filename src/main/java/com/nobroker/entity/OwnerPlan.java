@@ -16,22 +16,22 @@ public class OwnerPlan {
     @Id
     private String planId;
     @Column(name="plan_name", unique = true)
-   private String planName;
+    private String planName;
     @Column(name="price")
-   private int price;
+    private int price;
     @Column(name="plan_validity")
-   private int planeValidity;
+    private int planeValidity;
     @Column(name="relationship_Manager")
-   private boolean relationshipManager;
+    private boolean relationshipManager;
     @Column(name="rental_agreement")
-   private boolean rentalAgreement;
+    private boolean rentalAgreement;
     @Column(name="property_promotion")
-   private boolean propertyPromotion;
+    private boolean propertyPromotion;
     @Column(name="guaranteed_Tenant")
-   private boolean guaranteedTenant;
+    private boolean guaranteedTenant;
     @Column(name="showing_Property")
-   private boolean showingProperty;
+    private boolean showingProperty;
     @Column(name="facebook_marketing_")
-   private boolean faceBookMarketingOfProperty;
+    private boolean faceBookMarketingOfProperty;
 
 }

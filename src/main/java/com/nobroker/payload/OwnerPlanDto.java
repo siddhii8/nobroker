@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OwnerPlanDto {
-    @Id
+
     private String planId;
    private String planName;
    private int price;
