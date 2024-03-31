@@ -12,7 +12,7 @@ public class NobrokerApplication {
 		SpringApplication.run(NobrokerApplication.class, args);
 	}
 
-@Bean
+	@Bean
 	public ModelMapper modelMapper() {
 		return new ModelMapper();
 	}

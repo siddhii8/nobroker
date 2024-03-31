@@ -23,28 +23,25 @@ public class OwnerPlanServiceImpl implements OwnerPlanService {
 
     @Override
     public OwnerPlanDto createOwnerPlans(OwnerPlanDto ownerPlanDto) {
-    OwnerPlan ownerPlan = mapToEntity(ownerPlanDto);
-    OwnerPlan savedOwnerPlan= ownerPlanRepository.save(ownerPlan);
-    return mapToDto(savedOwnerPlan);
-
-    }
-
-    @Override
-    public List<OwnerPlanDto> getAllOwnerPlans() {
-    List<OwnerPlan> ownerPlan =  ownerPlanRepository.findAll();
-    List<OwnerPlanDto> ownerPlanDtos= ownerPlan.stream().map(plan->mapToDto(plan)).collect(Collectors.toList());
-
-     return ownerPlanDtos;
+        OwnerPlan ownerPlan = mapToEntity(ownerPlanDto);
+        OwnerPlan savedOwnerPlan = ownerPlanRepository.save(ownerPlan);
+        return mapToDto(savedOwnerPlan);
     }
 
     OwnerPlan mapToEntity(OwnerPlanDto ownerPlanDto) {
         OwnerPlan ownerPlan = modelMapper.map(ownerPlanDto, OwnerPlan.class);
-
         return ownerPlan;
     }
 
     OwnerPlanDto mapToDto(OwnerPlan ownerPlan) {
         OwnerPlanDto ownerPlanDto = modelMapper.map(ownerPlan, OwnerPlanDto.class);
         return ownerPlanDto;
+    }
+
+    @Override
+    public List<OwnerPlanDto> getAllOwnerPlans() {
+        List<OwnerPlan> ownerPlan = ownerPlanRepository.findAll();
+        List<OwnerPlanDto> ownerPlanDtos = ownerPlan.stream().map(plan -> mapToDto(plan)).collect(Collectors.toList());
+        return ownerPlanDtos;
     }
 }
